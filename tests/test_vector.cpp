@@ -29,3 +29,13 @@ TEST_CASE("operator used to access and modify elements", "[operator[]]") {
     REQUIRE(v[1] == 20);
 }
 
+TEST_CASE("at() function validates bounds and throws exception", "[at]") {
+    dsa::Vector<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    REQUIRE(v.at(0) == 10);
+    REQUIRE(v.at(1) == 20);
+    REQUIRE_THROWS_AS(v.at(2), std::out_of_range);
+    REQUIRE_THROWS_AS(v.at(-1), std::out_of_range);
+}
+
