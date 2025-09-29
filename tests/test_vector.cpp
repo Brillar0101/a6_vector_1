@@ -39,3 +39,12 @@ TEST_CASE("at() function validates bounds and throws exception", "[at]") {
     REQUIRE_THROWS_AS(v.at(-1), std::out_of_range);
 }
 
+TEST_CASE("front() and back() return first and last elements", "[front][back]") {
+    dsa::Vector<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    REQUIRE(v.front() == 10);
+    REQUIRE(v.back() == 20);
+}
+
+
