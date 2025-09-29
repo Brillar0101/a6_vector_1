@@ -17,5 +17,15 @@ TEST_CASE("push_back increases size and adds elements to array", "[push_back]") 
     REQUIRE(v.size() == 2);
     REQUIRE(v[0] == 10);
     REQUIRE(v[1] == 20);
+
+}
+
+TEST_CASE("operator used to access and modify elements", "[operator[]]") {
+    dsa::Vector<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    v[0] = 15;
+    REQUIRE(v[0] == 15);
+    REQUIRE(v[1] == 20);
 }
 
