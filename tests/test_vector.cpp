@@ -107,7 +107,7 @@ TEST_CASE("shrink to fit reduces capacity to size", "[shrink]") {
     v.push_back(30);
     v.reserve(10);
     REQUIRE(v.capacity() >= 10);
-    v.shrink();
+    v.shrink_to_fit();
     REQUIRE(v.capacity() == v.size());
     REQUIRE(v.size() == 3);
     REQUIRE(v[0] == 10);
